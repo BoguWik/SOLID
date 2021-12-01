@@ -31,11 +31,11 @@ public class HttpRestRequest {
 
     public void checkExeptions(String headerName, String HeaderValues)
     {
-        checkHeaderReq(headerName, HeaderValues);
+        checkHeaderRequirements(headerName, HeaderValues);
         checkHeaderFormat( headerName, HeaderValues);   
     }
 
-    public void checkHeaderReq(String headerName, String HeaderValues) throws InvalidHeaderException
+    public void checkHeaderRequirements(String headerName, String HeaderValues) throws InvalidHeaderException
     {
         if (headerValue == null && constraint.isHeaderRequired()) {
                 throw new InvalidHeaderException("Required header " + headerName + " not specified");
